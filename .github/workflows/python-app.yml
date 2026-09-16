@@ -1,11 +1,11 @@
-name: Treasure Game
+name: Treasure Game Tests
 
 on:
   push:
   workflow_dispatch:
 
 jobs:
-  run-game:
+  test-game:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,5 +17,5 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Run Python
-        run: python main.py
+      - name: Run test cases
+        run: python -m unittest test_main.py -v
